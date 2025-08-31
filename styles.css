@@ -1945,16 +1945,27 @@ body {
         padding: 2rem 0;
     }
     
+    .company-overview .container {
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+    
     .overview-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        padding: 0;
+        margin: 0;
     }
     
     .overview-text h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
         text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
     }
     
     .overview-text p {
@@ -1962,15 +1973,24 @@ body {
         line-height: 1.6;
         margin-bottom: 1rem;
         text-align: justify;
-        padding: 0 1rem;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
         word-wrap: break-word;
         hyphens: auto;
+        width: 100%;
     }
     
     /* Company Image Section Mobile Responsive */
     .company-image-section {
         padding: 1.5rem 0;
         margin: 1rem 0;
+    }
+    
+    .company-image-section .container {
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
     }
     
     .image-container img {
@@ -2297,26 +2317,44 @@ body {
         padding: 1.5rem 0;
     }
     
+    .company-overview .container {
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+    
     .overview-text h2 {
         font-size: 1.8rem;
         margin-bottom: 0.75rem;
         text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
     }
     
     .overview-text p {
         font-size: 0.95rem;
         line-height: 1.5;
         margin-bottom: 0.75rem;
-        padding: 0 0.5rem;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
         text-align: justify;
         word-wrap: break-word;
         hyphens: auto;
+        width: 100%;
     }
     
     /* Company Image Section Small Mobile Responsive */
     .company-image-section {
         padding: 1rem 0;
         margin: 0.75rem 0;
+    }
+    
+    .company-image-section .container {
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
     }
     
     .image-container img {
