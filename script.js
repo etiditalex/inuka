@@ -28,6 +28,16 @@ dropdowns.forEach(dropdown => {
     if (link && menu) {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+            e.stopPropagation();
+            
+            // Close other dropdowns first
+            dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
             dropdown.classList.toggle('active');
         });
     }
@@ -41,6 +51,19 @@ document.addEventListener('click', (e) => {
         });
     }
 });
+
+// Close dropdowns when mobile menu is closed
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        // Close all dropdowns when hamburger is clicked
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    });
+}
 
 // Property Search Form Handler
 const propertySearchForm = document.getElementById('propertySearchForm');

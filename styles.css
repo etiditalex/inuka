@@ -1824,12 +1824,15 @@ body {
         margin: 0;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: all 0.3s ease;
         border-top: 1px solid #e9ecef;
+        display: none;
     }
     
     .dropdown.active .dropdown-menu {
-        max-height: 300px;
+        max-height: none;
+        display: block;
+        overflow: visible;
     }
     
     .dropdown-menu li a {
