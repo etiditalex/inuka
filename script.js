@@ -265,6 +265,48 @@ function lazyLoadImages() {
 // Initialize lazy loading
 lazyLoadImages();
 
+// Top Bar Search Functionality
+function initTopSearch() {
+    const topSearchForm = document.getElementById('topSearchForm');
+    const topSearchInput = document.getElementById('topSearchInput');
+    
+    if (topSearchForm && topSearchInput) {
+        topSearchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const searchQuery = topSearchInput.value.trim();
+            
+            if (!searchQuery) {
+                showNotification('Please enter a search term', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const searchBtn = this.querySelector('.search-btn');
+            const originalIcon = searchBtn.innerHTML;
+            searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            searchBtn.disabled = true;
+            
+            // Simulate search and redirect to properties page with search query
+            setTimeout(() => {
+                const searchParams = new URLSearchParams({
+                    search: searchQuery
+                });
+                window.location.href = `land-for-sale.html?${searchParams.toString()}`;
+            }, 1000);
+        });
+        
+        // Add focus effect
+        topSearchInput.addEventListener('focus', function() {
+            this.parentElement.style.boxShadow = '0 0 0 3px rgba(255, 255, 255, 0.3)';
+        });
+        
+        topSearchInput.addEventListener('blur', function() {
+            this.parentElement.style.boxShadow = 'none';
+        });
+    }
+}
+
 // Hero Section Button Functionality
 function enhanceHeroButtons() {
     const exploreBtn = document.querySelector('.hero .btn-primary');
@@ -327,6 +369,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize hero button enhancements
     enhanceHeroButtons();
+    
+    // Initialize top search functionality
+    initTopSearch();
 });
 
 // Console welcome message

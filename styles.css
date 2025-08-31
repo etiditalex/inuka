@@ -22,6 +22,137 @@ body {
     padding: 0 20px;
 }
 
+/* Top Bar Styles */
+.top-bar {
+    background: linear-gradient(135deg, #2dabe1 0%, #1a9bd1 100%);
+    color: white;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-left .contact-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-item i {
+    color: #ffd700;
+    font-size: 0.9rem;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #ffd700;
+}
+
+.contact-item span {
+    color: white;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.top-search {
+    position: relative;
+}
+
+.top-search-form {
+    margin: 0;
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    padding: 0.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-input-group input {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    width: 250px;
+    font-size: 0.9rem;
+}
+
+.search-input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input-group input:focus {
+    outline: none;
+}
+
+.search-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.social-links-top {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links-top a {
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-links-top a:hover {
+    color: #ffd700;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
 /* Header Styles */
 .header {
     background: #ffffff;
@@ -30,6 +161,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    margin-top: 0;
 }
 
 .navbar {
@@ -153,7 +285,7 @@ body {
     text-align: center;
     color: white;
     position: relative;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .hero-content h1 {
@@ -1682,6 +1814,35 @@ body {
         font-size: 2rem;
     }
     
+    /* Top Bar Responsive */
+    .top-bar {
+        padding: 0.5rem 0;
+    }
+    
+    .top-bar-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .top-bar-left .contact-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .top-bar-right {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .search-input-group input {
+        width: 200px;
+    }
+    
+    .hero {
+        margin-top: 140px;
+    }
+    
     .tech-features {
         flex-direction: column;
         gap: 1rem;
@@ -1943,6 +2104,39 @@ body {
     
     .video-caption {
         font-size: 0.85rem;
+    }
+    
+    /* Top Bar Mobile Responsive */
+    .top-bar {
+        padding: 0.25rem 0;
+    }
+    
+    .top-bar-content {
+        gap: 0.75rem;
+    }
+    
+    .contact-item {
+        font-size: 0.8rem;
+    }
+    
+    .search-input-group input {
+        width: 150px;
+        font-size: 0.8rem;
+    }
+    
+    .search-btn {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .social-links-top a {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .hero {
+        margin-top: 150px;
     }
 
     /* Booking page responsive */
