@@ -1840,6 +1840,8 @@ body {
         background-color: #f8f9fa;
         font-weight: 400;
         transition: all 0.2s ease;
+        text-align: left;
+        justify-content: flex-start;
     }
     
     .dropdown-menu li a:hover {
