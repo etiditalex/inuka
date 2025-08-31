@@ -18,53 +18,68 @@ navLinks.forEach(link => {
     });
 });
 
-// Dropdown Menu Functionality
-const dropdowns = document.querySelectorAll('.dropdown');
-
-dropdowns.forEach(dropdown => {
-    const link = dropdown.querySelector('.nav-link');
-    const menu = dropdown.querySelector('.dropdown-menu');
+// Mobile Dropdown Menu Functionality
+function initMobileDropdowns() {
+    const dropdowns = document.querySelectorAll('.dropdown');
     
-    if (link && menu) {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('.nav-link');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        if (link && menu) {
+            // Remove any existing event listeners
+            link.removeEventListener('click', handleDropdownClick);
             
-            // Close other dropdowns first
-            dropdowns.forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove('active');
-                }
-            });
+            // Add new click event listener
+            link.addEventListener('click', handleDropdownClick);
             
-            // Toggle current dropdown
-            dropdown.classList.toggle('active');
-            
-            console.log('Dropdown clicked:', dropdown.classList.contains('active')); // Debug
-        });
-    }
-});
+            function handleDropdownClick(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log('Dropdown clicked:', dropdown.classList.contains('active'));
+                
+                // Close other dropdowns first
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+                
+                console.log('Dropdown state:', dropdown.classList.contains('active'));
+            }
+        }
+    });
+}
 
 // Close dropdowns when clicking outside
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.dropdown')) {
+        const dropdowns = document.querySelectorAll('.dropdown');
         dropdowns.forEach(dropdown => {
             dropdown.classList.remove('active');
         });
     }
 });
 
-// Close dropdowns when mobile menu is closed
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        // Close all dropdowns when hamburger is clicked
-        dropdowns.forEach(dropdown => {
-            dropdown.classList.remove('active');
+// Initialize dropdowns when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initMobileDropdowns();
+    
+    // Re-initialize dropdowns when mobile menu is opened
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            // Small delay to ensure menu is visible
+            setTimeout(() => {
+                initMobileDropdowns();
+            }, 100);
         });
-    });
-}
+    }
+});
 
 // Property Search Form Handler
 const propertySearchForm = document.getElementById('propertySearchForm');
