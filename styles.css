@@ -1964,15 +1964,17 @@ body {
         padding: 0 1rem;
     }
     
-    .overview-image {
-        order: -1;
-        margin-bottom: 1rem;
+    /* Company Image Section Mobile Responsive */
+    .company-image-section {
+        padding: 1.5rem 0;
+        margin: 1rem 0;
     }
     
-    .overview-image img {
+    .image-container img {
         max-width: 100%;
         height: auto;
         border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
     
     /* Mission Vision Mobile Responsive */
@@ -2281,12 +2283,15 @@ body {
         padding: 0 0.5rem;
     }
     
-    .overview-image {
-        margin-bottom: 0.75rem;
+    /* Company Image Section Small Mobile Responsive */
+    .company-image-section {
+        padding: 1rem 0;
+        margin: 0.75rem 0;
     }
     
-    .overview-image img {
+    .image-container img {
         border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     
     /* Mission Vision Small Mobile Responsive */
@@ -7310,6 +7315,29 @@ body {
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 0 1rem !important;
+}
+
+/* Company Image Section */
+.company-image-section {
+    padding: 2rem 0;
+    background: #f8f9fa;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.02);
 }
 
 /* ==========================================
