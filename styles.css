@@ -1709,15 +1709,31 @@ body {
         margin: 0 1rem;
     }
     
-    .contact-method,
+        .contact-method,
     .benefit-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .contact-icon,
     .benefit-icon {
         margin: 0 auto 1rem;
+    }
+
+    /* Booking page responsive */
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .properties-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .expectations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
     }
 }
 
@@ -6174,6 +6190,297 @@ body {
     .location-info h3 {
         font-size: 1.1rem;
     }
+
+    /* Booking page responsive */
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .properties-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .expectations-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .property-card {
+        margin: 0 1rem;
+    }
+
+    .expectation-item {
+        margin: 0 1rem;
+    }
+}
+
+/* ==========================================
+   BOOKING PAGE ADDITIONAL STYLES
+   ========================================== */
+
+/* Properties Preview Section */
+.properties-preview {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.properties-preview h2 {
+    text-align: center;
+    color: #2dabe1;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.property-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.property-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.1);
+}
+
+.property-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ec1c26;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.property-content {
+    padding: 1.5rem;
+}
+
+.property-content h3 {
+    color: #2dabe1;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.property-location {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.property-location i {
+    color: #ec1c26;
+    margin-right: 0.5rem;
+}
+
+.property-details {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.property-details span {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.property-details i {
+    color: #2dabe1;
+}
+
+.property-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.property-content .btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* Expectations Section */
+.expectations-section {
+    padding: 4rem 0;
+}
+
+.expectations-section h2 {
+    text-align: center;
+    color: #2dabe1;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.expectations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.expectation-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.expectation-item:hover {
+    transform: translateY(-10px);
+}
+
+.expectation-icon {
+    background: #2dabe1;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+}
+
+.expectation-item h3 {
+    color: #2dabe1;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.expectation-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Visit Tips */
+.visit-tips {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+.visit-tips h3 {
+    color: #2dabe1;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.visit-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.visit-tips li {
+    color: #666;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.visit-tips li:before {
+    content: "✓";
+    color: #ec1c26;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Booking Form Container */
+.booking-form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.booking-form-container h2 {
+    color: #2dabe1;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Enhanced Form Styles */
+.booking-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2dabe1;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    outline: none;
+    border-color: #2dabe1;
+    box-shadow: 0 0 0 3px rgba(45, 171, 225, 0.1);
+}
+
+.booking-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.booking-form .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 /* ==========================================
