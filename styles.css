@@ -1779,8 +1779,6 @@ body {
         justify-content: space-between;
         align-items: center;
         transition: background-color 0.2s ease;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
     }
     
     .nav-link:hover {
@@ -1796,8 +1794,6 @@ body {
         text-align: center;
         justify-content: center;
         font-weight: 600;
-        text-transform: none;
-        letter-spacing: normal;
     }
     
     .book-visit-btn:hover {
