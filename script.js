@@ -1,22 +1,48 @@
 // Enhanced JavaScript for Inuka Properties Website
 
 // Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+let hamburger, navMenu, navLinks;
 
-hamburger.addEventListener('click', () => {
+// Initialize mobile navigation
+function initMobileNav() {
+    hamburger = document.querySelector('.hamburger');
+    navMenu = document.querySelector('.nav-menu');
+    navLinks = document.querySelectorAll('.nav-link');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close mobile menu when clicking on non-dropdown links
+    navLinks.forEach(link => {
+        if (!link.closest('.dropdown')) {
+            link.addEventListener('click', closeMobileMenu);
+        }
+    });
+}
+
+// Toggle mobile menu
+function toggleMobileMenu() {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
-});
+    
+    // Initialize dropdowns when menu opens
+    if (navMenu.classList.contains('active')) {
+        setTimeout(() => {
+            initMobileDropdowns();
+        }, 100);
+    } else {
+        // Close all dropdowns when menu closes
+        closeAllDropdowns();
+    }
+}
 
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
+// Close mobile menu
+function closeMobileMenu() {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    closeAllDropdowns();
+}
 
 // Mobile Dropdown Menu Functionality
 function initMobileDropdowns() {
@@ -27,13 +53,12 @@ function initMobileDropdowns() {
         const menu = dropdown.querySelector('.dropdown-menu');
         
         if (link && menu) {
-            // Remove any existing event listeners
-            link.removeEventListener('click', handleDropdownClick);
+            // Remove existing event listeners to prevent duplicates
+            const newLink = link.cloneNode(true);
+            link.parentNode.replaceChild(newLink, link);
             
             // Add new click event listener
-            link.addEventListener('click', handleDropdownClick);
-            
-            function handleDropdownClick(e) {
+            newLink.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 
@@ -50,35 +75,30 @@ function initMobileDropdowns() {
                 dropdown.classList.toggle('active');
                 
                 console.log('Dropdown state:', dropdown.classList.contains('active'));
-            }
+            });
         }
+    });
+}
+
+// Close all dropdowns
+function closeAllDropdowns() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
     });
 }
 
 // Close dropdowns when clicking outside
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.dropdown')) {
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach(dropdown => {
-            dropdown.classList.remove('active');
-        });
+        closeAllDropdowns();
     }
 });
 
-// Initialize dropdowns when DOM is loaded
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    initMobileNav();
     initMobileDropdowns();
-    
-    // Re-initialize dropdowns when mobile menu is opened
-    const hamburger = document.querySelector('.hamburger');
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            // Small delay to ensure menu is visible
-            setTimeout(() => {
-                initMobileDropdowns();
-            }, 100);
-        });
-    }
 });
 
 // Property Search Form Handler

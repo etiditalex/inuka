@@ -1826,7 +1826,6 @@ body {
         overflow: hidden;
         transition: max-height 0.3s ease;
         border-top: 1px solid #e9ecef;
-        display: block;
     }
     
     .dropdown.active .dropdown-menu {
