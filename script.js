@@ -265,6 +265,70 @@ function lazyLoadImages() {
 // Initialize lazy loading
 lazyLoadImages();
 
+// Hero Section Button Functionality
+function enhanceHeroButtons() {
+    const exploreBtn = document.querySelector('.hero .btn-primary');
+    const bookVisitBtn = document.querySelector('.hero .btn-secondary');
+    
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Add loading state
+            const originalText = this.textContent;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            this.disabled = true;
+            
+            // Simulate loading and redirect
+            setTimeout(() => {
+                window.location.href = 'land-for-sale.html';
+            }, 800);
+        });
+    }
+    
+    if (bookVisitBtn) {
+        bookVisitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Add loading state
+            const originalText = this.textContent;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            this.disabled = true;
+            
+            // Simulate loading and redirect
+            setTimeout(() => {
+                window.location.href = 'book-visit.html';
+            }, 800);
+        });
+    }
+}
+
+// Smooth scroll to sections
+function smoothScrollToSection(targetId) {
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+        targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
+// Add click handlers for smooth scrolling
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling to all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            smoothScrollToSection(targetId);
+        });
+    });
+    
+    // Initialize hero button enhancements
+    enhanceHeroButtons();
+});
+
 // Console welcome message
 console.log('%c🏠 Welcome to Inuka Properties!', 'color: #2dabe1; font-size: 20px; font-weight: bold;');
 console.log('%cYour Elite Partner in Real Estate', 'color: #ec1c26; font-size: 14px;');
