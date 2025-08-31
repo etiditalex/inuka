@@ -1,0 +1,164 @@
+/* Enhanced button states */
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Property Search Section */
+.property-search {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
+    margin: 2rem 0;
+}
+
+.search-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-content h2 {
+    color: #2dabe1;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.search-content p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.search-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.search-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: end;
+}
+
+.search-field select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    transition: border-color 0.3s ease;
+}
+
+.search-field select:focus {
+    border-color: #2dabe1;
+    outline: none;
+}
+
+.search-form .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: linear-gradient(135deg, #2dabe1 0%, #1a9bd1 100%);
+    padding: 4rem 0;
+    color: white;
+}
+
+.newsletter-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-content h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.newsletter-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.newsletter-form .form-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.newsletter-form .btn {
+    background: #ec1c26;
+    border: none;
+    padding: 1rem 2rem;
+    white-space: nowrap;
+}
+
+.newsletter-form .btn:hover {
+    background: #d4151f;
+}
+
+.form-note {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Enhanced Mobile Responsiveness for Search and Newsletter */
+@media (max-width: 768px) {
+    .search-fields {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter-form .form-group {
+        flex-direction: column;
+    }
+    
+    .search-content h2,
+    .newsletter-content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .property-search,
+    .newsletter-section {
+        padding: 2rem 0;
+    }
+    
+    .search-form,
+    .newsletter-form {
+        padding: 1.5rem;
+    }
+    
+    .search-content h2,
+    .newsletter-content h2 {
+        font-size: 1.8rem;
+    }
+}

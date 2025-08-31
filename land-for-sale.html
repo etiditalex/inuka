@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land for Sale - Inuka Properties</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1756029907/download_2_pwhdnm.png" alt="Inuka Properties Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="land-for-sale.html" class="nav-link active">Land for Sale</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about/who-we-are.html">Who We Are</a></li>
+                            <li><a href="about/why-us.html">Why Us</a></li>
+                            <li><a href="about/our-team.html">Our Team</a></li>
+                            <li><a href="about/csr.html">CSR</a></li>
+                            <li><a href="about/our-partners.html">Our Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">IAPL INSIDER <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="insider/blogs.html">Blogs</a></li>
+                            <li><a href="insider/news.html">News</a></li>
+                            <li><a href="insider/market-research.html">Market Research</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Testimonials <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="testimonials/client-testimonials.html">Client Testimonials</a></li>
+                            <li><a href="testimonials/downloads.html">Downloads</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="book-visit.html" class="nav-link book-visit-btn">Book a Site Visit</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Land for Sale</h1>
+            <p>Discover prime investment opportunities in strategic locations across Kenya</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="location">Location:</label>
+                    <select id="location" class="filter-select">
+                        <option value="">All Locations</option>
+                        <option value="mombasa">Mombasa</option>
+                        <option value="nairobi">Nairobi</option>
+                        <option value="kilifi">Kilifi</option>
+                        <option value="kwale">Kwale</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price">Price Range:</label>
+                    <select id="price" class="filter-select">
+                        <option value="">All Prices</option>
+                        <option value="100000-500000">100K - 500K</option>
+                        <option value="500000-1000000">500K - 1M</option>
+                        <option value="1000000-5000000">1M - 5M</option>
+                        <option value="5000000+">5M+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="size">Land Size:</label>
+                    <select id="size" class="filter-select">
+                        <option value="">All Sizes</option>
+                        <option value="1/8">1/8 Acre</option>
+                        <option value="1/4">1/4 Acre</option>
+                        <option value="1/2">1/2 Acre</option>
+                        <option value="1">1 Acre</option>
+                        <option value="2+">2+ Acres</option>
+                    </select>
+                </div>
+                <button class="filter-btn" onclick="applyFilters()">Apply Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section class="properties-section">
+        <div class="container">
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <div class="property-card" data-location="mombasa" data-price="500000" data-size="1/4">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mombasa Land">
+                        <div class="property-badge">Featured</div>
+                    </div>
+                    <div class="property-content">
+                        <h3>Prime Land in Nyali, Mombasa</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Nyali, Mombasa</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-ruler-combined"></i> 1/4 Acre</span>
+                            <span><i class="fas fa-coins"></i> KES 500,000</span>
+                        </div>
+                        <p class="property-description">Premium residential land in the heart of Nyali, perfect for building your dream home. Close to amenities and the beach.</p>
+                        <div class="property-features">
+                            <span class="feature">Title Deed</span>
+                            <span class="feature">Fenced</span>
+                            <span class="feature">Access Road</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="book-visit.html" class="btn btn-primary">Book Site Visit</a>
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card" data-location="nairobi" data-price="1200000" data-size="1/2">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nairobi Land">
+                    </div>
+                    <div class="property-content">
+                        <h3>Investment Land in Kitengela</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Kitengela, Nairobi</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-ruler-combined"></i> 1/2 Acre</span>
+                            <span><i class="fas fa-coins"></i> KES 1,200,000</span>
+                        </div>
+                        <p class="property-description">High-potential investment land in the fast-growing Kitengela area. Excellent for commercial or residential development.</p>
+                        <div class="property-features">
+                            <span class="feature">Title Deed</span>
+                            <span class="feature">Surveyed</span>
+                            <span class="feature">Strategic Location</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="book-visit.html" class="btn btn-primary">Book Site Visit</a>
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card" data-location="kilifi" data-price="300000" data-size="1/8">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kilifi Land">
+                    </div>
+                    <div class="property-content">
+                        <h3>Affordable Land in Kilifi</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Kilifi County</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-ruler-combined"></i> 1/8 Acre</span>
+                            <span><i class="fas fa-coins"></i> KES 300,000</span>
+                        </div>
+                        <p class="property-description">Affordable land perfect for first-time buyers. Great investment opportunity with flexible payment terms.</p>
+                        <div class="property-features">
+                            <span class="feature">Title Deed</span>
+                            <span class="feature">Affordable</span>
+                            <span class="feature">Flexible Terms</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="book-visit.html" class="btn btn-primary">Book Site Visit</a>
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 4 -->
+                <div class="property-card" data-location="mombasa" data-price="800000" data-size="1/2">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mombasa Land">
+                    </div>
+                    <div class="property-content">
+                        <h3>Beachfront Land in Diani</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Diani, Mombasa</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-ruler-combined"></i> 1/2 Acre</span>
+                            <span><i class="fas fa-coins"></i> KES 800,000</span>
+                        </div>
+                        <p class="property-description">Exclusive beachfront property in the prestigious Diani area. Perfect for luxury development or vacation home.</p>
+                        <div class="property-features">
+                            <span class="feature">Title Deed</span>
+                            <span class="feature">Beachfront</span>
+                            <span class="feature">Premium Location</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="book-visit.html" class="btn btn-primary">Book Site Visit</a>
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 5 -->
+                <div class="property-card" data-location="nairobi" data-price="2500000" data-size="1">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nairobi Land">
+                    </div>
+                    <div class="property-content">
+                        <h3>Large Plot in Athi River</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Athi River, Nairobi</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-ruler-combined"></i> 1 Acre</span>
+                            <span><i class="fas fa-coins"></i> KES 2,500,000</span>
+                        </div>
+                        <p class="property-description">Spacious 1-acre plot ideal for commercial development or large residential project. Excellent infrastructure access.</p>
+                        <div class="property-features">
+                            <span class="feature">Title Deed</span>
+                            <span class="feature">Large Size</span>
+                            <span class="feature">Commercial Potential</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="book-visit.html" class="btn btn-primary">Book Site Visit</a>
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 6 -->
+                <div class="property-card" data-location="kwale" data-price="400000" data-size="1/4">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kwale Land">
+                    </div>
+                    <div class="property-content">
+                        <h3>Agricultural Land in Kwale</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Kwale County</p>
+                        <div class="property-details">
+                            <span><i class="fas fa-ruler-combined"></i> 1/4 Acre</span>
+                            <span><i class="fas fa-coins"></i> KES 400,000</span>
+                        </div>
+                        <p class="property-description">Fertile agricultural land with good soil quality. Perfect for farming or mixed-use development.</p>
+                        <div class="property-features">
+                            <span class="feature">Title Deed</span>
+                            <span class="feature">Fertile Soil</span>
+                            <span class="feature">Water Access</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="book-visit.html" class="btn btn-primary">Book Site Visit</a>
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Benefits -->
+    <section class="investment-benefits">
+        <div class="container">
+            <h2>Why Invest in Land with IAPL?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Guaranteed ROI</h3>
+                    <p>All our properties are strategically located to ensure maximum return on investment.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Genuine Titles</h3>
+                    <p>Every property comes with verified title deeds and proper documentation.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Flexible Payment</h3>
+                    <p>Interest-free payment plans tailored to your financial situation.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>Value Addition</h3>
+                    <p>We provide fencing, access roads, and bush clearing for your convenience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Find Your Perfect Investment?</h2>
+                <p>Contact our experts today for personalized guidance and exclusive property opportunities.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    <a href="book-visit.html" class="btn btn-secondary">Book Site Visit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://res.cloudinary.com/dyfnobo9r/image/upload/v1756029907/download_2_pwhdnm.png" alt="Inuka Properties Logo">
+                    </div>
+                    <p>Your Elite Partner in Real Estate</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="land-for-sale.html">Land for Sale</a></li>
+                        <li><a href="about/who-we-are.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Land Sales</li>
+                        <li>Affordable Housing</li>
+                        <li>Property Management</li>
+                        <li>Title Issuance</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info@inukaproperties.co.ke</p>
+                    <p><i class="fas fa-phone"></i> +254 711 082 084</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nyali, Mombasa</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Inuka Afrika Properties Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function applyFilters() {
+            const location = document.getElementById('location').value;
+            const price = document.getElementById('price').value;
+            const size = document.getElementById('size').value;
+            
+            const properties = document.querySelectorAll('.property-card');
+            
+            properties.forEach(property => {
+                let show = true;
+                
+                if (location && property.dataset.location !== location) {
+                    show = false;
+                }
+                
+                if (price) {
+                    const propertyPrice = parseInt(property.dataset.price);
+                    if (price === '100000-500000' && (propertyPrice < 100000 || propertyPrice > 500000)) {
+                        show = false;
+                    } else if (price === '500000-1000000' && (propertyPrice < 500000 || propertyPrice > 1000000)) {
+                        show = false;
+                    } else if (price === '1000000-5000000' && (propertyPrice < 1000000 || propertyPrice > 5000000)) {
+                        show = false;
+                    } else if (price === '5000000+' && propertyPrice < 5000000) {
+                        show = false;
+                    }
+                }
+                
+                if (size && property.dataset.size !== size) {
+                    show = false;
+                }
+                
+                property.style.display = show ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
