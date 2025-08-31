@@ -28,7 +28,6 @@ dropdowns.forEach(dropdown => {
     if (link && menu) {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            e.stopPropagation();
             
             // Close other dropdowns first
             dropdowns.forEach(otherDropdown => {
@@ -39,6 +38,8 @@ dropdowns.forEach(dropdown => {
             
             // Toggle current dropdown
             dropdown.classList.toggle('active');
+            
+            console.log('Dropdown clicked:', dropdown.classList.contains('active')); // Debug
         });
     }
 });
