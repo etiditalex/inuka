@@ -1945,27 +1945,50 @@ body {
         padding: 2rem 0;
     }
     
+    /* Override global container styles for mobile */
+    @media (max-width: 768px) {
+        .company-overview .container,
+        .company-overview .overview-content,
+        .company-overview .overview-text,
+        .company-overview .overview-text h2,
+        .company-overview .overview-text p {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        
+        /* Override global container padding */
+        .company-overview .container {
+            padding: 0 !important;
+        }
+    }
+    
     .company-overview .container {
-        padding: 0;
-        max-width: 100%;
-        margin: 0;
+        padding: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
     }
     
     .overview-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
-        padding: 0;
-        margin: 0;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     .overview-text h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
         text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     
     .overview-text p {
@@ -1973,12 +1996,12 @@ body {
         line-height: 1.6;
         margin-bottom: 1rem;
         text-align: justify;
-        padding: 0;
-        margin-left: 0;
-        margin-right: 0;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         word-wrap: break-word;
         hyphens: auto;
-        width: 100%;
+        width: 100% !important;
     }
     
     /* Company Image Section Mobile Responsive */
@@ -2317,32 +2340,55 @@ body {
         padding: 1.5rem 0;
     }
     
+    /* Override global container styles for small mobile */
+    @media (max-width: 480px) {
+        .company-overview .container,
+        .company-overview .overview-content,
+        .company-overview .overview-text,
+        .company-overview .overview-text h2,
+        .company-overview .overview-text p {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        
+        /* Override global container padding */
+        .company-overview .container {
+            padding: 0 !important;
+        }
+    }
+    
     .company-overview .container {
-        padding: 0;
-        max-width: 100%;
-        margin: 0;
+        padding: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
     }
     
     .overview-text h2 {
         font-size: 1.8rem;
         margin-bottom: 0.75rem;
         text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     
     .overview-text p {
         font-size: 0.95rem;
         line-height: 1.5;
         margin-bottom: 0.75rem;
-        padding: 0;
-        margin-left: 0;
-        margin-right: 0;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         text-align: justify;
         word-wrap: break-word;
         hyphens: auto;
-        width: 100%;
+        width: 100% !important;
     }
     
     /* Company Image Section Small Mobile Responsive */
