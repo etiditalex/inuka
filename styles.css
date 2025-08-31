@@ -1833,13 +1833,16 @@ body {
     }
     
     .top-bar-left .contact-info {
-        flex-direction: column;
-        gap: 0.5rem;
+        display: none; /* Hide contact info on mobile */
     }
     
     .top-bar-right {
         flex-direction: column;
         gap: 1rem;
+    }
+    
+    .social-links-top {
+        display: none; /* Hide social links on mobile */
     }
     
     .search-input-group input {
@@ -2120,10 +2123,11 @@ body {
     
     .top-bar-content {
         gap: 0.75rem;
+        justify-content: center; /* Center the search on mobile */
     }
     
     .contact-item {
-        font-size: 0.8rem;
+        display: none; /* Hide contact info on small mobile */
     }
     
     .search-input-group input {
@@ -2137,9 +2141,32 @@ body {
     }
     
     .social-links-top a {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
+        display: none; /* Hide social links on small mobile */
+    }
+    
+    /* Mobile-only top bar adjustments */
+    .top-bar-left {
+        display: none; /* Hide entire left section on mobile */
+    }
+    
+    .top-bar-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .top-search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .search-input-group {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .search-input-group input {
+        width: 100%;
     }
     
     .hero {
