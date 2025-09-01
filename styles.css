@@ -7497,12 +7497,12 @@ body {
     background: #25d366;
     color: white;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 12px 16px;
     border-radius: 50px;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
     transition: all 0.3s ease;
     font-weight: 600;
-    min-width: 200px;
+    min-width: 160px;
 }
 
 .whatsapp-link:hover {
@@ -7514,8 +7514,8 @@ body {
 }
 
 .whatsapp-icon {
-    font-size: 2rem;
-    margin-right: 12px;
+    font-size: 1.5rem;
+    margin-right: 10px;
     flex-shrink: 0;
 }
 
@@ -7526,13 +7526,8 @@ body {
 }
 
 .enquire-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
-}
-
-.whatsapp-label {
-    font-size: 0.8rem;
-    opacity: 0.9;
 }
 
 /* WhatsApp Button Mobile Responsive */
@@ -7545,33 +7540,8 @@ body {
     }
     
     .whatsapp-link {
-        padding: 12px 16px;
-        min-width: 180px;
-    }
-    
-    .whatsapp-icon {
-        font-size: 1.5rem;
-        margin-right: 10px;
-    }
-    
-    .enquire-text {
-        font-size: 0.9rem;
-    }
-    
-    .whatsapp-label {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .whatsapp-button {
-        right: 10px;
-        bottom: 15px;
-    }
-    
-    .whatsapp-link {
         padding: 10px 14px;
-        min-width: 160px;
+        min-width: 140px;
     }
     
     .whatsapp-icon {
@@ -7582,9 +7552,26 @@ body {
     .enquire-text {
         font-size: 0.85rem;
     }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        right: 10px;
+        bottom: 15px;
+    }
     
-    .whatsapp-label {
-        font-size: 0.7rem;
+    .whatsapp-link {
+        padding: 8px 12px;
+        min-width: 120px;
+    }
+    
+    .whatsapp-icon {
+        font-size: 1.1rem;
+        margin-right: 6px;
+    }
+    
+    .enquire-text {
+        font-size: 0.8rem;
     }
 }
 
