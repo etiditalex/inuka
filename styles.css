@@ -7481,6 +7481,113 @@ body {
     transform: scale(1.02);
 }
 
+/* WhatsApp Enquire Now Button */
+.whatsapp-button {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    min-width: 200px;
+}
+
+.whatsapp-link:hover {
+    background: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.whatsapp-icon {
+    font-size: 2rem;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.whatsapp-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.enquire-text {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.whatsapp-label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* WhatsApp Button Mobile Responsive */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        right: 15px;
+        top: auto;
+        bottom: 20px;
+        transform: none;
+    }
+    
+    .whatsapp-link {
+        padding: 12px 16px;
+        min-width: 180px;
+    }
+    
+    .whatsapp-icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    
+    .enquire-text {
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp-label {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        right: 10px;
+        bottom: 15px;
+    }
+    
+    .whatsapp-link {
+        padding: 10px 14px;
+        min-width: 160px;
+    }
+    
+    .whatsapp-icon {
+        font-size: 1.3rem;
+        margin-right: 8px;
+    }
+    
+    .enquire-text {
+        font-size: 0.85rem;
+    }
+    
+    .whatsapp-label {
+        font-size: 0.7rem;
+    }
+}
+
 /* ==========================================
    END OF STYLESHEET
    ========================================== */
