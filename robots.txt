@@ -29,3 +29,4 @@ Allow: /testimonials/
 Allow: /images/
 Allow: /css/
 Allow: /js/
+
