@@ -2069,28 +2069,28 @@ body {
     
     /* Mission Vision Mobile Responsive */
     .mission-vision {
-        padding: 2rem 0;
+        padding: 2rem 0 !important;
     }
     
     .mv-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
     }
     
     .mv-card {
-        padding: 1.5rem;
-        text-align: left;
+        padding: 1.5rem !important;
+        text-align: left !important;
     }
     
     .mv-card h3 {
-        font-size: 1.3rem;
-        text-align: left;
+        font-size: 1.3rem !important;
+        text-align: left !important;
     }
     
     .mv-card p {
-        text-align: left;
-        font-size: 0.95rem;
+        text-align: left !important;
+        font-size: 0.95rem !important;
     }
     
     .tech-features {
