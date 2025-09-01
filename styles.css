@@ -8376,11 +8376,6 @@ body {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .counter-item::before {
@@ -8514,7 +8509,6 @@ body {
     
     .counter-item {
         padding: 1.5rem;
-        height: 100px;
     }
     
     .counter-icon {
@@ -8548,7 +8542,6 @@ body {
     
     .counter-item {
         padding: 1rem;
-        height: 90px;
     }
     
     .counter-icon {
