@@ -417,34 +417,11 @@ function initTopSearch() {
     }
 }
 
-// Hero Section Button Functionality
+// Hero Section Button Functionality - Simplified
 function enhanceHeroButtons() {
-    const exploreBtn = document.querySelector('.hero .btn-primary');
-    const bookVisitBtn = document.querySelector('.hero .btn-secondary');
-    
-    if (exploreBtn) {
-        exploreBtn.addEventListener('click', function(e) {
-            // Add loading state without preventing default
-            const originalText = this.textContent;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-            this.style.pointerEvents = 'none';
-            
-            // Let the href handle the navigation naturally
-            // The loading state will show briefly before navigation
-        });
-    }
-    
-    if (bookVisitBtn) {
-        bookVisitBtn.addEventListener('click', function(e) {
-            // Add loading state without preventing default
-            const originalText = this.textContent;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-            this.style.pointerEvents = 'none';
-            
-            // Let the href handle the navigation naturally
-            // The loading state will show briefly before navigation
-        });
-    }
+    // Remove any potential interference with button functionality
+    // Let the href links work naturally
+    console.log('Hero buttons are ready for natural navigation');
 }
 
 // Smooth scroll to sections
