@@ -1954,8 +1954,8 @@ body {
     
     .overview-content {
         display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 3rem !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4rem !important;
         align-items: center !important;
     }
     
@@ -1976,6 +1976,22 @@ body {
         word-wrap: break-word !important;
     }
     
+    .overview-image {
+        text-align: center;
+    }
+    
+    .overview-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .overview-image img:hover {
+        transform: scale(1.02);
+    }
+    
     /* Company Overview Mobile Responsive */
     @media (max-width: 768px) {
         .company-overview {
@@ -1984,6 +2000,11 @@ body {
         
         .company-overview .container {
             padding: 0 1.5rem !important;
+        }
+        
+        .overview-content {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
         }
         
         .overview-text h2 {
@@ -1996,6 +2017,11 @@ body {
             line-height: 1.7 !important;
             margin-bottom: 1rem !important;
         }
+        
+        .overview-image img {
+            max-width: 100%;
+            height: auto;
+        }
     }
     
     @media (max-width: 480px) {
@@ -2007,6 +2033,11 @@ body {
             padding: 0 1rem !important;
         }
         
+        .overview-content {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+        }
+        
         .overview-text h2 {
             font-size: 1.8rem !important;
             margin-bottom: 1rem !important;
@@ -2015,6 +2046,11 @@ body {
         .overview-text p {
             font-size: 0.95rem !important;
             line-height: 1.6 !important;
+        }
+        
+        .overview-image img {
+            max-width: 100%;
+            height: auto;
         }
     }
     
