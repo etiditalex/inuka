@@ -7575,6 +7575,225 @@ body {
     }
 }
 
+/* Featured Property Section */
+.featured-property-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.featured-property-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.featured-property-header h2 {
+    color: #2dabe1;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.featured-property-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.featured-property-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.featured-property-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.featured-property-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.featured-property-image:hover img {
+    transform: scale(1.05);
+}
+
+.featured-property-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #2dabe1 0%, #1a8bc7 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(45, 171, 225, 0.3);
+}
+
+.featured-property-details h3 {
+    color: #2dabe1;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.featured-property-location {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.featured-property-description {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.featured-property-pricing {
+    margin-bottom: 2rem;
+}
+
+.featured-property-pricing h4 {
+    color: #2dabe1;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pricing-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-left: 4px solid #2dabe1;
+}
+
+.pricing-option .size {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.pricing-option .price {
+    font-weight: 700;
+    color: #2dabe1;
+    font-size: 1.2rem;
+}
+
+.featured-property-features {
+    margin-bottom: 2rem;
+}
+
+.featured-property-features h4 {
+    color: #2dabe1;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.features-list li i {
+    color: #2dabe1;
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.features-list li strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.featured-property-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.featured-property-actions .btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+
+/* Featured Property Mobile Responsive */
+@media (max-width: 768px) {
+    .featured-property-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .featured-property-header h2 {
+        font-size: 2rem;
+    }
+    
+    .featured-property-details h3 {
+        font-size: 1.8rem;
+    }
+    
+    .pricing-option {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .featured-property-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-property-section {
+        padding: 2rem 0;
+    }
+    
+    .featured-property-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .featured-property-details h3 {
+        font-size: 1.6rem;
+    }
+    
+    .featured-property-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .featured-property-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* ==========================================
    END OF STYLESHEET
    ========================================== */
