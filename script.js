@@ -95,9 +95,60 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Counter Animation Functionality
+function initCounterAnimation() {
+    const counterItems = document.querySelectorAll('.counter-item');
+    
+    if (counterItems.length === 0) return;
+    
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counterItem = entry.target;
+                const counterValue = counterItem.querySelector('.counter-value');
+                const target = parseInt(counterItem.dataset.target);
+                
+                if (counterValue && !counterItem.classList.contains('animated')) {
+                    counterItem.classList.add('animated');
+                    animateCounter(counterValue, target);
+                    
+                    // Add entrance animation
+                    counterItem.style.animation = 'counterSlideIn 0.8s ease-out forwards';
+                }
+            }
+        });
+    }, observerOptions);
+    
+    counterItems.forEach(item => {
+        counterObserver.observe(item);
+    });
+}
+
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 100;
+    const duration = 2000; // 2 seconds
+    const stepTime = duration / 100;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+    }, stepTime);
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initMobileNav();
+    initCounterAnimation();
     initMobileDropdowns();
 });
 
