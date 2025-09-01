@@ -1992,6 +1992,58 @@ body {
         transform: scale(1.02);
     }
     
+    /* Company Structure Section */
+    .company-structure {
+        padding: 4rem 0;
+        background: #f8f9fa;
+    }
+    
+    .company-structure .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .company-structure h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2dabe1;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .structure-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    
+    .structure-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+        word-wrap: break-word;
+    }
+    
+    .structure-image {
+        text-align: center;
+    }
+    
+    .structure-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .structure-image img:hover {
+        transform: scale(1.02);
+    }
+    
     /* Company Overview Mobile Responsive */
     @media (max-width: 768px) {
         .company-overview {
@@ -2022,6 +2074,36 @@ body {
             max-width: 100%;
             height: auto;
         }
+        
+        /* Company Structure Mobile Responsive */
+        .company-structure {
+            padding: 3rem 0 !important;
+        }
+        
+        .company-structure .container {
+            padding: 0 1.5rem !important;
+        }
+        
+        .company-structure h2 {
+            font-size: 2rem !important;
+            margin-bottom: 2rem !important;
+        }
+        
+        .structure-content {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+        }
+        
+        .structure-text p {
+            font-size: 1rem !important;
+            line-height: 1.7 !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        .structure-image img {
+            max-width: 100%;
+            height: auto;
+        }
     }
     
     @media (max-width: 480px) {
@@ -2049,6 +2131,35 @@ body {
         }
         
         .overview-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Company Structure Mobile Responsive */
+        .company-structure {
+            padding: 2rem 0 !important;
+        }
+        
+        .company-structure .container {
+            padding: 0 1rem !important;
+        }
+        
+        .company-structure h2 {
+            font-size: 1.8rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+        
+        .structure-content {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+        }
+        
+        .structure-text p {
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+        }
+        
+        .structure-image img {
             max-width: 100%;
             height: auto;
         }
