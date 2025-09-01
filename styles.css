@@ -8342,7 +8342,7 @@ body {
 
 /* Counter Numbers Section */
 .counter-numbers {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: #000000;
     padding: 5rem 0;
     position: relative;
     overflow: hidden;
@@ -8435,7 +8435,7 @@ body {
 .counter-value {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #2dabe1;
+    color: #ffffff;
     display: inline-block;
     position: relative;
     animation: counterPulse 2s ease-in-out infinite;
@@ -8444,20 +8444,20 @@ body {
 .counter-plus {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1976d2;
+    color: #2dabe1;
     margin-left: 0.2rem;
 }
 
 .counter-label {
     font-size: 1.1rem;
-    color: #666;
+    color: #cccccc;
     font-weight: 500;
     line-height: 1.4;
     transition: color 0.3s ease;
 }
 
 .counter-item:hover .counter-label {
-    color: #333;
+    color: #ffffff;
 }
 
 /* Counter Animation Keyframes */
