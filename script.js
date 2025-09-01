@@ -424,33 +424,25 @@ function enhanceHeroButtons() {
     
     if (exploreBtn) {
         exploreBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Add loading state
+            // Add loading state without preventing default
             const originalText = this.textContent;
             this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-            this.disabled = true;
+            this.style.pointerEvents = 'none';
             
-            // Simulate loading and redirect
-            setTimeout(() => {
-                window.location.href = 'land-for-sale.html';
-            }, 800);
+            // Let the href handle the navigation naturally
+            // The loading state will show briefly before navigation
         });
     }
     
     if (bookVisitBtn) {
         bookVisitBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Add loading state
+            // Add loading state without preventing default
             const originalText = this.textContent;
             this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-            this.disabled = true;
+            this.style.pointerEvents = 'none';
             
-            // Simulate loading and redirect
-            setTimeout(() => {
-                window.location.href = 'book-visit.html';
-            }, 800);
+            // Let the href handle the navigation naturally
+            // The loading state will show briefly before navigation
         });
     }
 }
