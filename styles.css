@@ -165,7 +165,7 @@ body {
     background: #ffffff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
-    top: 50px;
+    top: 60px;
     width: 100%;
     z-index: 1000;
     margin-top: 0;
@@ -1772,6 +1772,11 @@ body {
         left: 0;
     }
     
+    /* Mobile Header Positioning */
+    .header {
+        top: 80px !important;
+    }
+    
     .nav-item {
         margin: 0;
         border-bottom: 1px solid #f0f0f0;
@@ -2217,6 +2222,11 @@ body {
         
         .company-image-section .container {
             padding: 0 1rem;
+        }
+        
+        /* Mobile Header Positioning for Small Screens */
+        .header {
+            top: 70px !important;
         }
     }
     
