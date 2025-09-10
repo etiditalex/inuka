@@ -465,6 +465,293 @@ body {
     margin: 0 auto;
 }
 
+/* Local SEO Section */
+.local-seo-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #2dabe1 0%, #1a9bd1 100%);
+    color: white;
+}
+
+.local-content h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.local-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.local-feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.local-feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.local-feature p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* GMB CTA Styles */
+.gmb-cta {
+    margin-top: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.gmb-cta p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* Google My Business Landing Page Styles */
+.gmb-hero {
+    background: linear-gradient(135deg, #2dabe1 0%, #1a9bd1 100%);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.gmb-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.gmb-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.gmb-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.gmb-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.gmb-services {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.gmb-services h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #2dabe1;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #2dabe1;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: #2dabe1;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.service-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.service-card li:last-child {
+    border-bottom: none;
+}
+
+.gmb-locations {
+    padding: 4rem 0;
+    background: white;
+}
+
+.gmb-locations h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #2dabe1;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.location-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #2dabe1;
+}
+
+.location-card h3 {
+    color: #2dabe1;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.location-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.location-card li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.gmb-reviews {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.gmb-reviews h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #2dabe1;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.review-rating {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.review-author strong {
+    color: #2dabe1;
+}
+
+.review-author span {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.gmb-contact {
+    padding: 4rem 0;
+    background: white;
+}
+
+.gmb-contact h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #2dabe1;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-info-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border-top: 4px solid #2dabe1;
+}
+
+.contact-info-card h3 {
+    color: #2dabe1;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-info-card p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
 /* Trust Section */
 .trust-section {
     padding: 4rem 0;
