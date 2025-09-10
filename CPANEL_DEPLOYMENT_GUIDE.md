@@ -33,10 +33,11 @@
 3. **CRITICAL:** Make sure .htaccess file is uploaded (it's hidden by default)
 
 **Method B: Upload as ZIP (Recommended)**
-1. Create a ZIP file of all your INUKA files
+1. Download the updated ZIP file: `inuka-properties-website-complete.zip`
 2. Upload the ZIP to public_html
 3. Extract the ZIP file in cPanel
 4. Delete the ZIP file after extraction
+5. **IMPORTANT:** This ZIP now includes all the new individual blog post pages
 
 ### Step 3: Set File Permissions
 After upload, set these permissions:
@@ -60,6 +61,20 @@ public_html/
 ├── sitemap.xml
 ├── about/
 ├── insider/
+│   ├── blogs.html
+│   ├── news.html
+│   ├── market-research.html
+│   └── posts/
+│       ├── blogs/
+│       │   ├── 2024-real-estate-market-outlook-coastal-kenya.html
+│       │   ├── 5-essential-questions-buying-land.html
+│       │   ├── kilifi-county-next-investment-frontier.html ← NEW
+│       │   ├── nyali-mombasa-smart-investment.html ← NEW
+│       │   ├── understanding-title-deeds-complete-guide.html ← NEW
+│       │   ├── flexible-payment-plans-making-real-estate-accessible.html ← NEW
+│       │   └── new-highway-project-boost-coastal-real-estate.html ← NEW
+│       ├── news/
+│       └── research/
 ├── properties/
 └── testimonials/
 ```
@@ -92,6 +107,18 @@ public_html/
 3. **Test:** Mobile responsiveness
 4. **Verify:** Contact forms work
 5. **Confirm:** Search functionality works
+
+### Step 9: Test Blog Post Links (CRITICAL)
+Test these specific blog post URLs to ensure they work:
+1. **Visit:** https://inukaproperties.co.ke/insider/blogs.html
+2. **Click each "Read More" button** and verify they lead to complete articles:
+   - Kilifi County: The Next Investment Frontier
+   - Nyali: Why This Mombasa Neighborhood is a Smart Investment
+   - Understanding Title Deeds: A Complete Guide for Investors
+   - Flexible Payment Plans: Making Real Estate Investment Accessible
+   - New Highway Project to Boost Coastal Real Estate Values
+3. **Verify:** No 404 errors on any blog post pages
+4. **Check:** All blog posts have complete content and proper navigation
 
 ### Step 9: SEO Verification
 1. **Google Search Console:** Submit sitemap
