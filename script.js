@@ -381,39 +381,86 @@ function initTopSearch() {
     const topSearchInput = document.getElementById('topSearchInput');
     
     if (topSearchForm && topSearchInput) {
+        // Form submission handler
         topSearchForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const searchQuery = topSearchInput.value.trim();
-            
-            if (!searchQuery) {
-                showNotification('Please enter a search term', 'error');
-                return;
-            }
-            
-            // Show loading state
-            const searchBtn = this.querySelector('.search-btn');
-            const originalIcon = searchBtn.innerHTML;
-            searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-            searchBtn.disabled = true;
-            
-            // Simulate search and redirect to properties page with search query
-            setTimeout(() => {
-                const searchParams = new URLSearchParams({
-                    search: searchQuery
-                });
-                window.location.href = `land-for-sale.html?${searchParams.toString()}`;
-            }, 1000);
+            handleSearch();
         });
         
-        // Add focus effect
+        // Search button click handler (for mobile touch)
+        const searchBtn = topSearchForm.querySelector('.search-btn');
+        if (searchBtn) {
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleSearch();
+            });
+        }
+        
+        // Enter key handler
+        topSearchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSearch();
+            }
+        });
+        
+        // Enhanced focus/blur effects for mobile
         topSearchInput.addEventListener('focus', function() {
-            this.parentElement.style.boxShadow = '0 0 0 3px rgba(255, 255, 255, 0.3)';
+            this.parentElement.style.boxShadow = '0 0 0 3px rgba(255, 255, 255, 0.4)';
+            this.parentElement.style.transform = 'scale(1.02)';
+            this.parentElement.style.transition = 'all 0.3s ease';
         });
         
         topSearchInput.addEventListener('blur', function() {
             this.parentElement.style.boxShadow = 'none';
+            this.parentElement.style.transform = 'scale(1)';
         });
+        
+        // Mobile-specific enhancements
+        if ('ontouchstart' in window) {
+            // Add touch feedback
+            topSearchInput.addEventListener('touchstart', function() {
+                this.parentElement.style.background = 'rgba(255, 255, 255, 0.3)';
+            });
+            
+            topSearchInput.addEventListener('touchend', function() {
+                this.parentElement.style.background = 'rgba(255, 255, 255, 0.15)';
+            });
+        }
+        
+        // Prevent zoom on input focus (iOS Safari)
+        topSearchInput.addEventListener('focus', function() {
+            this.style.fontSize = '16px';
+        });
+        
+        topSearchInput.addEventListener('blur', function() {
+            this.style.fontSize = '';
+        });
+    }
+    
+    function handleSearch() {
+        const searchQuery = topSearchInput.value.trim();
+        
+        if (!searchQuery) {
+            showNotification('Please enter a search term', 'error');
+            topSearchInput.focus();
+            return;
+        }
+        
+        // Show loading state
+        const searchBtn = topSearchForm.querySelector('.search-btn');
+        const originalIcon = searchBtn.innerHTML;
+        searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        searchBtn.disabled = true;
+        topSearchInput.disabled = true;
+        
+        // Simulate search and redirect to properties page with search query
+        setTimeout(() => {
+            const searchParams = new URLSearchParams({
+                search: searchQuery
+            });
+            window.location.href = `land-for-sale.html?${searchParams.toString()}`;
+        }, 800);
     }
 }
 
