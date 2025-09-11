@@ -1,5 +1,60 @@
 // Enhanced JavaScript for Inuka Properties Website
 
+// Video Loading Handler
+function initVideoHandling() {
+    const videoContainer = document.querySelector('.video-container');
+    const iframe = document.querySelector('.video-container iframe');
+    const fallback = document.querySelector('.video-fallback');
+    
+    if (videoContainer && iframe) {
+        // Add loading indicator
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'video-loading';
+        loadingDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading video...';
+        videoContainer.appendChild(loadingDiv);
+        
+        // Handle video load
+        iframe.addEventListener('load', function() {
+            loadingDiv.style.display = 'none';
+            iframe.style.opacity = '1';
+            if (fallback) fallback.style.display = 'none';
+        });
+        
+        // Handle video error
+        iframe.addEventListener('error', function() {
+            loadingDiv.style.display = 'none';
+            iframe.style.display = 'none';
+            if (fallback) fallback.style.display = 'flex';
+        });
+        
+        // Timeout fallback
+        setTimeout(() => {
+            if (loadingDiv.style.display !== 'none') {
+                loadingDiv.style.display = 'none';
+                iframe.style.display = 'none';
+                if (fallback) fallback.style.display = 'flex';
+            }
+        }, 8000); // 8 second timeout
+    }
+}
+
+// Show video error with fallback
+function showVideoError() {
+    const videoContainer = document.querySelector('.video-container');
+    if (videoContainer) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'video-error';
+        errorDiv.innerHTML = `
+            <h4><i class="fas fa-exclamation-triangle"></i> Video Not Available</h4>
+            <p>Sorry, the video couldn't load. You can watch it directly on YouTube:</p>
+            <a href="https://www.youtube.com/watch?v=M7k2QPoKOJ0" target="_blank" rel="noopener">
+                <i class="fab fa-youtube"></i> Watch on YouTube
+            </a>
+        `;
+        videoContainer.appendChild(errorDiv);
+    }
+}
+
 // Mobile Navigation Toggle
 let hamburger, navMenu, navLinks;
 
@@ -150,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileNav();
     initCounterAnimation();
     initMobileDropdowns();
+    initVideoHandling();
 });
 
 // Property Search Form Handler
