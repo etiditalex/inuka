@@ -1058,6 +1058,114 @@ body {
     transform: scale(1.05);
 }
 
+.article-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #2dabe1;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2dabe1, #1a9bd1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.author-title {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.article-share {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.article-share span {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 50%;
+    color: #6c757d;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background: #2dabe1;
+    border-color: #2dabe1;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.article-category {
+    background: linear-gradient(135deg, #2dabe1, #1a9bd1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.article-date, .article-read-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #495057;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-left: 4px solid #2dabe1;
+    border-radius: 0 10px 10px 0;
+}
+
 .article-body {
     font-size: 1.1rem;
     color: #2c3e50;
@@ -1368,6 +1476,110 @@ body {
     .article-image img {
         height: 250px;
     }
+    
+    .article-author {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .article-share {
+        justify-content: center;
+    }
+    
+    .share-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Downloads Page Styles */
+.downloads-section {
+    padding: 3rem 0;
+}
+
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.download-item {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2dabe1, #1a9bd1, #2dabe1);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.download-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.download-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #2dabe1, #1a9bd1);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.download-content h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.download-content p {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.download-content .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .downloads-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .download-item {
+        padding: 1.5rem;
+    }
+    
+    .download-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
     
     .cta-section {
         padding: 2rem 1.5rem;
