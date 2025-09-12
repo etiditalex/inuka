@@ -55,7 +55,7 @@ function showVideoError() {
     }
 }
 
-// Mobile Navigation Toggle
+// Enhanced Mobile Navigation Toggle
 let hamburger, navMenu, navLinks;
 
 // Initialize mobile navigation
@@ -66,12 +66,39 @@ function initMobileNav() {
     
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', toggleMobileMenu);
+        
+        // Add touch support for better mobile experience
+        hamburger.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            toggleMobileMenu();
+        });
     }
     
     // Close mobile menu when clicking on non-dropdown links
     navLinks.forEach(link => {
         if (!link.closest('.dropdown')) {
             link.addEventListener('click', closeMobileMenu);
+            
+            // Add touch support
+            link.addEventListener('touchstart', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    setTimeout(() => closeMobileMenu(), 100);
+                }
+            });
+        }
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeMobileMenu();
         }
     });
 }
@@ -99,7 +126,7 @@ function closeMobileMenu() {
     closeAllDropdowns();
 }
 
-// Mobile Dropdown Menu Functionality
+// Enhanced Mobile Dropdown Menu Functionality
 function initMobileDropdowns() {
     const dropdowns = document.querySelectorAll('.dropdown');
     
@@ -112,12 +139,10 @@ function initMobileDropdowns() {
             const newLink = link.cloneNode(true);
             link.parentNode.replaceChild(newLink, link);
             
-            // Add new click event listener
+            // Add click event listener
             newLink.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                
-                console.log('Dropdown clicked:', dropdown.classList.contains('active'));
                 
                 // Close other dropdowns first
                 dropdowns.forEach(otherDropdown => {
@@ -129,7 +154,36 @@ function initMobileDropdowns() {
                 // Toggle current dropdown
                 dropdown.classList.toggle('active');
                 
-                console.log('Dropdown state:', dropdown.classList.contains('active'));
+                // Add smooth animation
+                if (dropdown.classList.contains('active')) {
+                    menu.style.maxHeight = menu.scrollHeight + 'px';
+                } else {
+                    menu.style.maxHeight = '0px';
+                }
+            });
+            
+            // Add touch support for mobile
+            newLink.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Close other dropdowns first
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                        otherDropdown.querySelector('.dropdown-menu').style.maxHeight = '0px';
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+                
+                // Add smooth animation
+                if (dropdown.classList.contains('active')) {
+                    menu.style.maxHeight = menu.scrollHeight + 'px';
+                } else {
+                    menu.style.maxHeight = '0px';
+                }
             });
         }
     });
@@ -140,6 +194,10 @@ function closeAllDropdowns() {
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
         dropdown.classList.remove('active');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        if (menu) {
+            menu.style.maxHeight = '0px';
+        }
     });
 }
 
